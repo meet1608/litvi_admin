@@ -25,7 +25,7 @@ const ProductEdit = () => {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const response = await axios.get(`http://localhost:5002/api/admin/products/${id}`);
+                const response = await axios.get(`https://litvi-admin.onrender.com/api/admin/products/${id}`);
                 setFormData(response.data);
             } catch (error) {
                 console.error('Error fetching product:', error);
@@ -46,7 +46,7 @@ const ProductEdit = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.put(`http://localhost:5002/api/admin/products/${id}`, formData);
+            await axios.put(`https://litvi-admin.onrender.com/api/admin/products/${id}`, formData);
             toast.success('Product updated successfully');
             navigate('/admin/products');
         } catch (error) {

@@ -8,6 +8,13 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 3002,
+    proxy: {
+      '/api': {
+        target: 'https://managelitvi.vercel.app', // Replace with your Vercel URL
+        changeOrigin: true,
+        secure: true,
+      },
+    },
   },
   plugins: [
     react(),

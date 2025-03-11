@@ -55,7 +55,7 @@ const Addproducts = () => {
             });
     
             // Upload directly to /api/admin/products
-            const response = await axios.post("http://localhost:5002/api/admin/products", formDataWithImages, {
+            const response = await axios.post("https://litvi-admin.onrender.com/api/admin/products", formDataWithImages, {
                 headers: { "Content-Type": "multipart/form-data" },
             });
     

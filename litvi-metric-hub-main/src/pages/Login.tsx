@@ -16,7 +16,7 @@ const Login = () => {
     setIsLoading(true);
     
     try {
-      const response = await axios.post("http://localhost:5002/api/admin/login", { email, password });
+      const response = await axios.post("https://litvi-admin.onrender.com/api/admin/login", { email, password });
       localStorage.setItem("litvi-admin-auth", response.data.token);
       setIsLoginSuccessful(true);
       toast({

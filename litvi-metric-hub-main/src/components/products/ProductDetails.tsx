@@ -14,7 +14,7 @@ const ProductDetails = () => {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const response = await axios.get(`http://localhost:5002/api/admin/products/${id}`);
+                const response = await axios.get(`https://litvi-admin.onrender.com/api/admin/products/${id}`);
                 setProduct(response.data);
                 setLoading(false);
             } catch (error) {
@@ -40,7 +40,7 @@ const ProductDetails = () => {
         if (window.confirm('Are you sure you want to delete this product?')) {
             try {
                 console.log("Deleting product with ID:", id); // Use the id from useParams
-                await axios.delete(`http://localhost:5002/api/admin/products/${id}`);
+                await axios.delete(`https://litvi-admin.onrender.com/api/admin/products/${id}`);
                 toast.success('Product deleted successfully');
                 navigate('/admin/products'); // Redirect to product list after successful deletion
 
@@ -61,7 +61,7 @@ const ProductDetails = () => {
 
     const getImageUrl = (imagePath) => {
         if (!imagePath) return "/placeholder.jpg";
-        return imagePath.startsWith("http") ? imagePath : `http://localhost:5002/uploads/${imagePath}`;
+        return imagePath.startsWith("http") ? imagePath : `https://litvi-admin.onrender.com/uploads/${imagePath}`;
     };
 
     if (loading) {

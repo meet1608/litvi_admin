@@ -15,7 +15,7 @@ export function ProductTable() {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get('http://localhost:5002/api/admin/products'); // Adjust URL if needed
+            const response = await axios.get('https://litvi-admin.onrender.com/api/admin/products'); // Adjust URL if needed
             setProducts(response.data);
         } catch (error) {
             console.error('Error fetching products:', error);
@@ -35,7 +35,7 @@ export function ProductTable() {
     const handleDelete = async (productId) => {
         if (window.confirm('Are you sure you want to delete this product?')) {
             try {
-                await axios.delete(`http://localhost:5002/api/admin/products/${productId}`);
+                await axios.delete(`https://litvi-admin.onrender.com/api/admin/products/${productId}`);
                 setProducts(products.filter(product => product._id !== productId)); 
                 toast.success('Product deleted successfully');
             } catch (error) {
@@ -77,7 +77,7 @@ export function ProductTable() {
 
     const getImageUrl = (imagePath) => {
         if (!imagePath) return "/placeholder.jpg";
-        return imagePath.startsWith("http") ? imagePath : `http://localhost:5002/uploads/${imagePath}`;
+        return imagePath.startsWith("http") ? imagePath : `https://litvi-admin.onrender.com/uploads/${imagePath}`;
     };
 
 

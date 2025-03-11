@@ -14,7 +14,7 @@ const Products = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:5002/api/admin/products');
+      const response = await axios.get('https://litvi-admin.onrender.com/api/admin/products');
       setProducts(response.data);
     } catch (error) {
       console.error('Error fetching products:', error);
